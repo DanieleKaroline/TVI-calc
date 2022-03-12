@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <math.h>
 //Importamos as bibliotecas necessárias para a realização dos calculos e verificação
 
 int main(){
 
 //declaração das variaveis que iremos usar
-float x, y, e = 2.718282, k, dist, centro;
+float x, y, e = 2.718282, k, dist, centro, t;
 
 
 //input para pedir os valores do intervalo
@@ -14,7 +15,11 @@ scanf("%f", &x);
 printf("Digite o segundo valor do intervalo:\n");
 scanf("%f", &y);
 
-
+if(x > y){
+    t = x;
+    x = y;
+    y = t;
+}
 //função para aplicar os valores na fórmula e obter o valor intermediario
 float valori(float j){
     k = pow(e, -j) - 2 * pow(j, 2) + 4;
